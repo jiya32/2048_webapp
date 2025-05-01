@@ -8,12 +8,6 @@ window.onload = function() {
 }
 
 function setGame() {
-    // board = [
-    //     [2, 2, 2, 2],
-    //     [2, 2, 2, 2],
-    //     [4, 4, 8, 8],
-    //     [4, 4, 8, 8]
-    // ];
 
     board = [
         [0, 0, 0, 0],
@@ -73,7 +67,7 @@ document.addEventListener('keyup', (e) => {
 })
 
 function filterZero(row){
-    return row.filter(num => num != 0); //create new array of all nums != 0
+    return row.filter(num => num != 0); //new array 
 }
 
 function slide(row) {
@@ -85,8 +79,8 @@ function slide(row) {
             row[i+1] = 0;
             score += row[i];
         }
-    } //[4, 0, 2]
-    row = filterZero(row); //[4, 2]
+    } 
+    row = filterZero(row); //
     //add zeroes
     while (row.length < columns) {
         row.push(0);
@@ -180,7 +174,7 @@ function hasEmptyTile() {
     let count = 0;
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
-            if (board[r][c] == 0) { //at least one zero in the board
+            if (board[r][c] == 0) { 
                 return true;
             }
         }
